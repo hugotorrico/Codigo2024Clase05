@@ -203,12 +203,26 @@ void CalcularPromedioNotasCompleto()
     Console.WriteLine(promedioAjustado);
 }
 
+void EjemploArregloDidimensional()
+{     
+// Declarar e inicializar un arreglo bidimensional
+int[,] matriz = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
 
+for (int i = 0; i < 3; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        Console.WriteLine(i + "," + j);
+        Console.WriteLine(matriz[i, j] + " ");
 
-
-
-
-
+    }
+    Console.WriteLine();
+}
+}
 Console.ReadLine();
 
 
