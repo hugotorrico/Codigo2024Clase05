@@ -223,6 +223,28 @@ for (int i = 0; i < 3; i++)
     Console.WriteLine();
 }
 }
+
+
+List<string> nombres = new List<string>();
+int contador = 0;
+string nombre = "";
+do
+{
+    Console.WriteLine("Ingrese el nombre " + (contador + 1) + " :");
+    nombre = Convert.ToString(Console.ReadLine());
+    nombres.Add(nombre);
+    contador++;
+
+} while (nombre.ToUpper()!="S");
+
+Console.WriteLine("Los Nombres Ingresados son");
+
+for (int i = 0; i < nombres.Count-1; i++)
+{
+    Console.WriteLine(nombres[i]);
+}
+
+
 Console.ReadLine();
 
 
