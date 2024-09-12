@@ -75,15 +75,80 @@ int CalcularMayorNotas(int[] notas)
 
 //int mayor = notas.Max();//Función es propia del .NET
 
+void CalcularMayorNotasCompleto()
+{ 
 int[] notasMatematica = { 16, 18, 14, 20 };
 int[] notasLenguaje = { 16, 18, 14 };
 int[] notasHistoria = { 18, 14 };
+
 //Matemática
 Console.WriteLine(CalcularMayorNotas(notasMatematica));
 //Lenguaje
 Console.WriteLine(CalcularMayorNotas(notasLenguaje));
 //Historia
 Console.WriteLine(CalcularMayorNotas(notasHistoria));
+
+}
+
+void ArreglosString()
+{
+    string[] nombres = { "Juan", "María", "Luis", "Ana" };
+
+    for (int i = 0; i < nombres.Length; i++)
+    {
+        Console.WriteLine(nombres[i]);
+    }
+
+    string[] paises = new string[3];
+    paises[0] = "Perú";
+    paises[1] = "Argentina";
+    paises[2] = "Colombia";
+
+    for (int i = 0; i < paises.Length; i++)
+    {
+        Console.WriteLine(paises[i]);
+    }
+}
+
+double[] IngresarSueldos(double[] sueldos)
+{
+    for (int i = 0; i < sueldos.Length; i++)
+    {
+        Console.WriteLine("Ingrese el sueldo " + (i + 1) + " :");
+        sueldos[i] = Convert.ToDouble(Console.ReadLine());
+    }
+    return sueldos;
+}
+
+double CalcularPromedio(double[] sueldos)
+{
+    double promedio = 0;
+    double sumaSueldos = 0;
+
+    for (int i = 0; i < sueldos.Length; i++)
+    {
+        sumaSueldos = sumaSueldos + sueldos[i];
+
+    }
+    promedio=sumaSueldos/sueldos.Length;
+    return promedio;
+}
+
+
+double[] sueldos = new double[5];
+double promedio = 0;
+sueldos= IngresarSueldos(sueldos);
+promedio = CalcularPromedio(sueldos);
+
+Console.WriteLine("El sueldo promedio es:");
+Console.WriteLine(promedio);
+
+
+
+
+
+
+
 
 
 Console.ReadLine();
