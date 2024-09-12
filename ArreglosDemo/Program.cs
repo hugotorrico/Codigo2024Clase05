@@ -134,16 +134,74 @@ double CalcularPromedio(double[] sueldos)
     return promedio;
 }
 
+void CalcularPromedioCompleto()
+{
+    double[] sueldos = new double[5];
+    double promedio = 0;
+    sueldos = IngresarSueldos(sueldos);
+    promedio = CalcularPromedio(sueldos);
 
-double[] sueldos = new double[5];
-double promedio = 0;
-sueldos= IngresarSueldos(sueldos);
-promedio = CalcularPromedio(sueldos);
+    Console.WriteLine("El sueldo promedio es:");
+    Console.WriteLine(promedio);
 
-Console.WriteLine("El sueldo promedio es:");
-Console.WriteLine(promedio);
+}
 
 
+int[] IngresarNotas(int[] notas)
+{
+    for (int i = 0; i < notas.Length; i++)
+    {
+        Console.WriteLine("Ingrese la nota " + (i + 1) + " :");
+        notas[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    return notas;
+}
+
+int CalcularMenorNotas(int[] notas)
+{
+    int menor = notas[0];
+
+    for (int i = 0; i < notas.Length; i++)
+    {
+        if (notas[i] < menor)
+            menor = notas[i];
+    }
+    return menor;
+
+}
+
+double CalcularPromedioAjustadoNotas(int[] notas)
+{
+    double promedio;
+    int menor = CalcularMenorNotas(notas);
+    int mayor = CalcularMayorNotas(notas);
+  
+    int suma = 0;
+    int cantidad = notas.Length - 2;
+    for (int i = 0; i < notas.Length; i++)
+    {
+        suma = suma + notas[i];
+    }
+
+    promedio = (suma - mayor - menor) / cantidad;    
+
+    return promedio;
+}
+
+
+
+void CalcularPromedioNotasCompleto()
+{
+    int cantidadNotas = 0;
+    double promedioAjustado = 0;
+    Console.WriteLine("Ingrese Cantidad Notas");
+    cantidadNotas = Convert.ToInt32(Console.ReadLine());
+    int[] notas = new int[cantidadNotas];
+    IngresarNotas(notas);
+    promedioAjustado = CalcularPromedioAjustadoNotas(notas);
+    Console.WriteLine("El promedio es:");
+    Console.WriteLine(promedioAjustado);
+}
 
 
 
